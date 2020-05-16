@@ -1,7 +1,8 @@
 const {
   sortShowtimes,
   sortMoviesShowtimes,
-  isShowingInNext24Hours
+  isShowingInNext24Hours,
+  isTimeInFuture
 } = require('./utils');
 
 describe('sortShowtimes', () => {
@@ -74,22 +75,22 @@ describe('sortShowtimes', () => {
 describe('sortMoviesShowtimes', () => {
   test('sorts 2 showtimes', () => {
     const movies = [
-      { Showtimes: [
+      { showtimes: [
         '2020-05-23T16:31:09.000Z',
         '2020-05-17T06:55:45.000Z'
       ]},
-      { Showtimes: [
+      { showtimes: [
         '2020-05-20T13:23:48.000Z',
         '2020-06-17T21:18:36.000Z'
       ]}
     ];
     const expected = sortMoviesShowtimes(movies);
     expect(expected).toEqual([
-      { Showtimes: [
+      { showtimes: [
         '2020-05-17T06:55:45.000Z',
         '2020-05-23T16:31:09.000Z'
       ]},
-      { Showtimes: [
+      { showtimes: [
         '2020-05-20T13:23:48.000Z',
         '2020-06-17T21:18:36.000Z'
       ]}
@@ -97,12 +98,12 @@ describe('sortMoviesShowtimes', () => {
   });
 
   test('should not edit the parameter', () => {
-    const movies = [{ Showtimes: [
+    const movies = [{ showtimes: [
       '2020-05-23T16:31:09.000Z',
       '2020-05-17T06:55:45.000Z'
     ]}];
     sortMoviesShowtimes(movies);
-    expect(movies).toEqual([{ Showtimes: [
+    expect(movies).toEqual([{ showtimes: [
       '2020-05-23T16:31:09.000Z',
       '2020-05-17T06:55:45.000Z'
     ]}]);
@@ -150,5 +151,31 @@ describe('isShowingInNext24Hours', () => {
     showtime.setHours(showtime.getHours() + 1);
     const result = isShowingInNext24Hours(showtime.toISOString());
     expect(result).toBe(true);
+  });
+});
+
+describe('isTimeInFuture', () => {
+  test('yep', () => {
+    const time = '2020-05-23T06:00:00.000Z';
+    const now = new Date('2020-05-23T05:00:00.000Z');
+    const result = isTimeInFuture(time, now);
+    expect(result).toBe(true);
+  });
+
+  test('nope', () => {
+    const time = '2020-05-23T06:00:00.000Z';
+    const now = new Date('2020-05-24T06:00:00.000Z');
+    const result = isTimeInFuture(time, now);
+    expect(result).toBe(false);
+  });
+
+  test('default works', () => {
+    const time = new Date();
+    time.setHours(time.getHours() + 1);
+    const isFuture = isTimeInFuture(time);
+    expect(isFuture).toBe(true);
+    time.setHours(time.getHours() - 10);
+    const isPast = isTimeInFuture(time);
+    expect(isPast).toBe(false);
   });
 });

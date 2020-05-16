@@ -12,7 +12,7 @@ function listMovies() {
     MPAA_Rating: 'R',
     Release_Date: 'Mar 07 1986',
     Title: 'Highlander',
-    Showtimes: [
+    showtimes: [
       '2020-05-23T16:31:09.000Z',
       '2020-05-17T06:55:45.000Z',
       '2020-06-05T06:28:25.000Z',
@@ -31,7 +31,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Oct 30 1981',
     Title: 'Halloween II',
-    Showtimes: [
+    showtimes: [
       '2020-06-15T14:17:01.000Z',
       '2020-05-27T22:10:53.000Z',
       '2020-05-15T22:00:17.000Z',
@@ -50,7 +50,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Oct 01 1988',
     Title: 'Halloween 4: The Return of Michael Myers',
-    Showtimes: [
+    showtimes: [
       '2020-06-07T06:55:14.000Z',
       '2020-05-18T04:49:45.000Z',
       '2020-05-21T13:51:15.000Z',
@@ -69,7 +69,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Oct 17 1978',
     Title: 'Halloween',
-    Showtimes: [
+    showtimes: [
       '2020-05-20T13:23:48.000Z',
       '2020-06-17T21:18:36.000Z',
       '2020-06-27T14:46:50.000Z',
@@ -88,7 +88,7 @@ function listMovies() {
     MPAA_Rating: 'PG',
     Release_Date: 'Nov 20 1992',
     Title: 'Home Alone 2: Lost in New York',
-    Showtimes: [
+    showtimes: [
       '2020-06-20T15:47:05.000Z',
       '2020-05-15T15:21:25.000Z',
       '2020-06-11T12:23:30.000Z',
@@ -107,7 +107,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Dec 11 1991',
     Title: 'Hook',
-    Showtimes: [
+    showtimes: [
       '2020-05-22T00:25:20.000Z',
       '2020-06-10T19:37:44.000Z',
       '2020-06-26T09:23:32.000Z',
@@ -126,7 +126,7 @@ function listMovies() {
     MPAA_Rating: 'PG-13',
     Release_Date: 'Feb 16 1996',
     Title: 'Happy Gilmore',
-    Showtimes: [
+    showtimes: [
       '2020-06-15T07:51:42.000Z',
       '2020-06-01T08:32:54.000Z',
       '2020-06-23T09:40:59.000Z',
@@ -145,7 +145,7 @@ function listMovies() {
     MPAA_Rating: 'PG',
     Release_Date: 'Mar 11 1994',
     Title: 'The Hudsucker Proxy',
-    Showtimes: [
+    showtimes: [
       '2020-06-13T01:04:38.000Z',
       '2020-06-25T00:19:04.000Z',
       '2020-06-20T08:12:30.000Z',
@@ -164,7 +164,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Mar 02 1990',
     Title: 'The Hunt for Red October',
-    Showtimes: [
+    showtimes: [
       '2020-05-28T22:42:41.000Z',
       '2020-06-07T18:42:04.000Z',
       '2020-06-30T04:24:26.000Z',
@@ -183,7 +183,7 @@ function listMovies() {
     MPAA_Rating: null,
     Release_Date: 'Dec 23 1977',
     Title: 'High Anxiety',
-    Showtimes: [
+    showtimes: [
       '2020-05-20T06:59:05.000Z',
       '2020-05-27T23:00:53.000Z',
       '2020-06-14T09:15:35.000Z',
@@ -202,7 +202,7 @@ function listMovies() {
     MPAA_Rating: 'PG-13',
     Release_Date: 'Jul 02 1996',
     Title: 'Independence Day',
-    Showtimes: [
+    showtimes: [
       '2020-05-24T04:40:54.000Z',
       '2020-06-16T22:06:26.000Z',
       '2020-05-16T02:42:00.000Z',
@@ -221,7 +221,7 @@ function listMovies() {
     MPAA_Rating: 'PG-13',
     Release_Date: 'Aug 23 1996',
     Title: 'The Island of Dr. Moreau',
-    Showtimes: [
+    showtimes: [
       '2020-05-21T08:20:32.000Z',
       '2020-06-30T08:43:21.000Z',
       '2020-06-08T07:07:39.000Z',

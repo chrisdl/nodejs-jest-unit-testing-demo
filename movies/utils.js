@@ -7,18 +7,31 @@ function sortShowtimes(a, b) {
   return 0;
 }
 
+// Because we pass in the now param (for testing)
+// this function is not as easy to pass in to a filter function.
+// which is unfortunate.
+function isTimeInFuture(ISO8601String, now) {
+  now = now instanceof Date ? now : new Date();
+  const time = new Date(ISO8601String);
+
+  // How can we check that we remembered this correctly? (unit tests)
+  // in walkthrough do it wrong...
+  return time - now > 0;
+}
+
 function sortMoviesShowtimes(movies) {
   // https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
   // const moviesCopy = movies.slice();
   // const moviesCopy = movies.map(x => x);
   const moviesCopy = JSON.parse(JSON.stringify(movies));
   for (const movie of moviesCopy) {
-    movie.Showtimes.sort(sortShowtimes);
+    movie.showtimes.sort(sortShowtimes);
   }
   return moviesCopy;
 }
 
-function isShowingInNext24Hours(showtime, now=new Date()) {
+function isShowingInNext24Hours(showtime, now) {
+  now = now instanceof Date ? now : new Date();
   const show = new Date(showtime);
   const diff = show - now;
   // console.log({
@@ -33,6 +46,7 @@ function isShowingInNext24Hours(showtime, now=new Date()) {
 
 module.exports = {
   sortShowtimes,
+  isTimeInFuture,
   sortMoviesShowtimes,
   isShowingInNext24Hours
 };
